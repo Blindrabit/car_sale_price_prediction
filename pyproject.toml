@@ -1,0 +1,29 @@
+[project]
+name = "car-sale-price-predication"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Adam Tucker",email = "a.r.tucker@hotmail.co.uk"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "django (==5.2.8)",
+    "djangorestframework (==3.16.1)",
+    "drf-yasg (==1.21.11)",
+    "django-filter (==25.2)",
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+django-stubs = "^5.2.7"
+pytest = "9.0.0"
+pytest-django = "^4.11.1"
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "car_sale_price_predication.settings"
+python_files = ["test_*.py", "*_test.py", "testing/python/*.py"]

@@ -1,0 +1,6 @@
+.env
+.venv
+.idea
+.idea/*
+car_sale_price_predication/.idea/*
+car_sale_price_predication/.idea
