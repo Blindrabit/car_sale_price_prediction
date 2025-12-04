@@ -27,7 +27,8 @@ class CarsViewSet(ModelViewSet):
 class ManufacturerCountView(APIView):
     def get(self, request, *args, **kwargs):
         objects = (
-            Car.objects.values("manufacturer")
+            Car.objects.select_related()
+            .values("manufacturer__uuid", "manufacturer__name")
             .annotate(count=Count("manufacturer"), average_price=Avg("price"))
             .order_by("-count")
         )
